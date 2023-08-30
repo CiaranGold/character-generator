@@ -10,19 +10,28 @@
 
 - returns them */
 
-const charName = ["Aldric Blackthorn", "Elara Stormbringer", "Gareth Ironheart", "Lyanna Shadowblade", "Kaelthorn Fireforge", "Elysia Moonshadow", "Dorian Grimsworn", "Isolde Ravenshadow", "Thorne Bloodfang", "Faelan Nightwhisper", "Seraphina Frostbloom", "Cassius Stormrider"];
+const char = {
+    charName: [
+      "Aldric Blackthorn", "Elara Stormbringer", "Gareth Ironheart","Lyanna Shadowblade", "Kaelthorn Fireforge", "Elysia Moonshadow", "Dorian Grimsworn", "Isolde Ravenshadow", "Thorne Bloodfang", "Faelan Nightwhisper", "Seraphina Frostbloom", "Cassius Stormrider"
+    ],
+    charRace: [
+      "Human", "Elf", "Dwarf", "Orc", "Halfling", "Gnome", "Half-Elf", "Half-Orc", "Tiefling", "Dragonborn", "Goblin", "Aasimar"
+    ],
+    charProfession: [
+      "Warrior", "Mage", "Rogue", "Cleric", "Paladin", "Ranger", "Bard", "Druid", "Sorcerer", "Monk", "Necromancer", "Alchemist"
+    ]
+  };
 
-const charRace = ["Human", "Elf", "Dwarf", "Orc", "Halfling", "Gnome", "Half-Elf", "Half-Orc", "Tiefling", "Dragonborn", "Goblin", "Aasimar"];
-
-const charProfession = ["Warrior", "Mage", "Rogue", "Cleric", "Paladin", "Ranger", "Bard", "Druid", "Sorcerer", "Monk", "Necromancer", "Alchemist"];
-
-function randInt() { // returns a random number from 0 to 11 to access the arrays by index positioning
-    let num = (Math.floor(Math.random()*12))
-    return num
+const randInt = (max)=> { // returns a random number using a num input
+    return (Math.floor(Math.random()*max))
 }
 
-console.log(`Random RPG character generator program v0.1
+console.log(`Random RPG character generator program v0.2
 
 You have generated:
 
-${charName[randInt()]}, who is a ${charRace[randInt()]}. They are a ${charProfession[randInt()]}.`);
+${char.charName[randInt(char.charName.length)]}, who is a ${char.charRace[randInt(char.charRace.length)]}. They are a ${char.charProfession[randInt(char.charProfession.length)]}.`);
+
+
+/* refined randInt function 
+moved arrays into object*/

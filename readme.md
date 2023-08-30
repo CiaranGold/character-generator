@@ -6,5 +6,8 @@ It uses three arrays to create a RPG-style character, calling elements randomly 
 
 ## Version history:
 
+- **v0.2**
+    - Streamlined randInt fn
+    - Moved arrays into object 
 - **v0.1**
     - Program runs automatically in debug console
